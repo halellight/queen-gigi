@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Dr. Gigi — October 23rd</title>
+  <meta name="description" content="A little something for your birthday.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Italianno&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="silk-theme">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sp-icon" viewBox="0 0 24 24">
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.307c-.216.353-.674.467-1.027.251-2.814-1.72-6.356-2.109-10.528-1.155-.404.092-.806-.157-.899-.561-.092-.403.158-.805.561-.898 4.567-1.045 8.49-.607 11.642 1.336.353.216.467.674.251 1.027zm1.469-3.267c-.272.443-.853.585-1.296.313-3.222-1.98-8.134-2.553-11.946-1.396-.5.152-1.033-.133-1.185-.633-.152-.5.133-1.033.633-1.185 4.358-1.323 9.775-.684 13.481 1.605.443.272.585.853.313 1.296zm.126-3.41c-3.864-2.294-10.244-2.506-13.93-1.387-.594.18-1.226-.155-1.406-.749-.18-.594.155-1.226.749-1.406 4.237-1.286 11.28-1.041 15.717 1.593.535.317.708 1.011.391 1.546-.317.535-1.011.708-1.546.391z" />
+    </symbol>
+  </svg>
+
+  <canvas id="ambient-canvas"></canvas>
+
+  <header class="top-header">
+    <div class="header-left">
+      <span class="edition-tag">SPECIAL EDITION • 23.10</span>
+      <span class="music-indicator" id="music-indicator">
+        <button id="toggle-music-btn" class="pill-btn" aria-label="Toggle soundtrack">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+          <span id="music-label">Soundtrack: Paused</span>
+        </button>
+      </span>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <section class="hero-cover" id="hero-section">
+      <div class="editorial-container">
+        <div class="edition-header">
+          <span class="sub-rule">Nº 23 • AUTUMN EDIT</span>
+          <span class="date-stamp">OCTOBER 23, 2026</span>
+          <span class="sub-rule">THE CELEBRATION</span>
+        </div>
+
+        <div class="hero-title-group">
+          <p class="script-subtitle">A little something for your birthday</p>
+          <h1 class="hero-title">
+            <span class="title-light">CELEBRATING</span>
+            <span class="title-name" id="display-girlfriend-name">DR. GIGI</span>
+          </h1>
+          <p class="hero-quote" id="display-tagline">“Today is all about you — your light, your work, and everything
+            still ahead.”</p>
+        </div>
+
+        <div class="countdown-card" id="countdown-banner">
+          <div class="countdown-inner">
+            <div class="countdown-label" id="countdown-label">COUNTDOWN TO OCTOBER 23RD</div>
+            <div class="countdown-timer" id="countdown-timer">
+              <div class="time-block"><span class="time-num" id="cd-days">00</span><span class="time-unit">DAYS</span>
+              </div>
+              <div class="time-sep">:</div>
+              <div class="time-block"><span class="time-num" id="cd-hours">00</span><span class="time-unit">HOURS</span>
+              </div>
+              <div class="time-sep">:</div>
+              <div class="time-block"><span class="time-num" id="cd-mins">00</span><span
+                  class="time-unit">MINUTES</span></div>
+              <div class="time-sep">:</div>
+              <div class="time-block"><span class="time-num" id="cd-secs">00</span><span
+                  class="time-unit">SECONDS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue">
+          <a href="#cake-section" class="scroll-link">
+            <span>BEGIN CELEBRATION</span>
+            <svg class="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 Candles -->
+    <section class="ceremony-section" id="cake-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">01</span>
+          <h2 class="section-heading">The Birthday Candle Ceremony</h2>
+          <p class="section-subtext">Sculpted in silk white and pure candlelight. Make your deepest wish before
+            extinguishing the flames.</p>
+        </div>
+
+        <div class="cake-stage-card">
+          <div class="cake-display" id="cake-container">
+            <div class="candles-rack" id="candles-rack">
+              <div class="candle" data-index="1">
+                <div class="flame-glow"></div>
+                <div class="flame" id="flame-1"></div>
+                <div class="smoke" id="smoke-1"></div>
+                <div class="wick"></div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle center-candle" data-index="2">
+                <div class="flame-glow"></div>
+                <div class="flame" id="flame-2"></div>
+                <div class="smoke" id="smoke-2"></div>
+                <div class="wick"></div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle" data-index="3">
+                <div class="flame-glow"></div>
+                <div class="flame" id="flame-3"></div>
+                <div class="smoke" id="smoke-3"></div>
+                <div class="wick"></div>
+                <div class="candle-stick"></div>
+              </div>
+            </div>
+
+            <div class="cake-body">
+              <div class="cake-frosting-top">
+                <div class="gold-flake"></div>
+                <div class="gold-flake f2"></div>
+                <div class="gold-flake f3"></div>
+              </div>
+              <div class="cake-tier tier-top">
+                <div class="tier-rim"></div>
+              </div>
+              <div class="cake-tier tier-middle">
+                <div class="tier-crease"></div>
+              </div>
+              <div class="cake-tier tier-bottom">
+                <div class="ribbon-band"></div>
+              </div>
+              <div class="cake-stand">
+                <div class="pedestal-top"></div>
+                <div class="pedestal-base"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cake-actions">
+            <div class="wish-status-badge" id="wish-status">
+              <span class="status-dot pulsing"></span>
+              <span id="wish-status-text">Candles are glowing. Close your eyes &amp; make a wish...</span>
+            </div>
+
+            <div class="interaction-buttons">
+              <button id="blow-candles-btn" class="silk-action-btn primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span id="blow-btn-text">Blow Out Candles</span>
+              </button>
+              <button id="mic-blow-btn" class="silk-action-btn secondary"
+                title="Blow directly onto your device microphone!">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+                <span id="mic-btn-text">Blow via Mic</span>
+              </button>
+              <button id="relight-btn" class="silk-action-btn tertiary hidden">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v8M12 18v4M4 12H2M22 12h-2"></path>
+                </svg>
+                <span>Relight Candles</span>
+              </button>
+            </div>
+
+            <div class="wish-reveal-card hidden" id="wish-reveal-card">
+              <span class="reveal-crown">✧ ✦ ✧</span>
+              <h3 class="reveal-title">Your wish has been written to the stars!</h3>
+              <p class="reveal-message" id="display-wish-note">May this new year bring you peace, clarity, and every
+                good thing you are working toward.</p>
+              <div class="signature">With warm wishes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Gallery -->
+    <section class="gallery-section" id="gallery-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">02</span>
+          <h2 class="section-heading">Moments in Silk &amp; Silver</h2>
+          <p class="section-subtext">Tap any polaroid to flip it and read the note on the back.</p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all">All Moments</button>
+            <button class="filter-pill" data-filter="dates">Style</button>
+            <button class="filter-pill" data-filter="candid">Smiles</button>
+          </div>
+        </div>
+
+        <div class="polaroid-grid" id="polaroid-grid">
+          <div class="polaroid-item" data-category="candid" style="--tilt: -2.4deg;">
+            <div class="polaroid-pin"></div>
+            <div class="polaroid-card">
+              <div class="polaroid-inner">
+                <div class="polaroid-front">
+                  <div class="polaroid-photo-frame"><img src="images/Image (8).jpg" alt="Dr. Gigi" class="polaroid-img">
+                  </div>
+                  <div class="polaroid-caption">
+                    <p class="caption-title">Radiant Elegance</p><span class="caption-date">Radiant • Poised</span>
+                  </div>
+                </div>
+                <div class="polaroid-back">
+                  <div class="note-paper">
+                    <div class="paper-texture"></div>
+                    <span class="note-stamp">NOTE Nº 01</span>
+                    <p class="handwritten-note">"Some people carry a calm you feel before they say a word. You are one
+                      of them."</p>
+                    <div class="note-footer">— With admiration</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="flip-hint-btn">Flip Note ↻</button>
+          </div>
+
+          <div class="polaroid-item" data-category="dates" style="--tilt: 2.8deg;">
+            <div class="polaroid-pin"></div>
+            <div class="polaroid-card">
+              <div class="polaroid-inner">
+                <div class="polaroid-front">
+                  <div class="polaroid-photo-frame"><img src="images/her-standing-portrait.jpg" alt="Dr. Gigi"
+                      class="polaroid-img"></div>
+                  <div class="polaroid-caption">
+                    <p class="caption-title">Poise</p><span class="caption-date">Graceful • Composed</span>
+                  </div>
+                </div>
+                <div class="polaroid-back">
+                  <div class="note-paper">
+                    <div class="paper-texture"></div>
+                    <span class="note-stamp">NOTE Nº 02</span>
+                    <p class="handwritten-note">"Grace and poise like this do not come from trying. They are simply
+                      you."</p>
+                    <div class="note-footer">— Effortless</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="flip-hint-btn">Flip Note ↻</button>
+          </div>
+
+          <div class="polaroid-item" data-category="candid" style="--tilt: -1.6deg;">
+            <div class="polaroid-pin"></div>
+            <div class="polaroid-card">
+              <div class="polaroid-inner">
+                <div class="polaroid-front">
+                  <div class="polaroid-photo-frame"><img src="her-portrait.jpg" alt="Dr. Gigi" class="polaroid-img">
+                  </div>
+                  <div class="polaroid-caption">
+                    <p class="caption-title">Gentle Glow</p><span class="caption-date">Warm • Bright</span>
+                  </div>
+                </div>
+                <div class="polaroid-back">
+                  <div class="note-paper">
+                    <div class="paper-texture"></div>
+                    <span class="note-stamp">NOTE Nº 03</span>
+                    <p class="handwritten-note">"A smile like this can change the mood of a whole day."</p>
+                    <div class="note-footer">— Bright</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="flip-hint-btn">Flip Note ↻</button>
+          </div>
+
+          <div class="polaroid-item" data-category="dates" style="--tilt: 3.1deg;">
+            <div class="polaroid-pin"></div>
+            <div class="polaroid-card">
+              <div class="polaroid-inner">
+                <div class="polaroid-front">
+                  <div class="polaroid-photo-frame"><img src="spotify-playlist-code.jpg" alt="Spotify playlist code"
+                      class="polaroid-img"></div>
+                  <div class="polaroid-caption">
+                    <p class="caption-title">Your Soundtrack</p><span class="caption-date">Spotify Code • Scan to
+                      listen</span>
+                  </div>
+                </div>
+                <div class="polaroid-back">
+                  <div class="note-paper">
+                    <div class="paper-texture"></div>
+                    <span class="note-stamp">NOTE Nº 04</span>
+                    <p class="handwritten-note">"A few songs picked with you in mind. I hope at least one becomes a
+                      favourite."</p>
+                    <div class="note-footer">— For you</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="flip-hint-btn">Flip Note ↻</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Playlist -->
+    <section class="playlist-section" id="playlist-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">03</span>
+          <h2 class="section-heading">A Playlist Just For <span id="display-playlist-for-name">Dr. Gigi</span></h2>
+          <p class="section-subtext">Your own Spotify code and birthday mixtape. Scan it with the Spotify app camera, or
+            press play right here.</p>
+        </div>
+
+        <div class="spotify-showcase">
+          <div class="spotify-art-stage">
+            <div class="spotify-card-outer">
+              <div class="vinyl-disc" id="vinyl-disc">
+                <div class="vinyl-groove"></div>
+                <div class="vinyl-groove g2"></div>
+                <div class="vinyl-groove g3"></div>
+                <div class="vinyl-center-label">
+                  <img src="her-portrait-square.jpg" alt="" class="vinyl-label-img">
+                  <div class="vinyl-spindle"></div>
+                  <span class="vinyl-subtext">OCT 23 • SIDE A</span>
+                </div>
+              </div>
+
+              <div class="spotify-code-card" id="spotify-code-card">
+                <div class="card-badge">
+                  <svg class="spotify-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <use href="#sp-icon" />
+                  </svg>
+                  <span>OFFICIAL SPOTIFY CODE</span>
+                </div>
+                <div class="card-image-holder">
+                  <img src="spotify-playlist-code.jpg" alt="Spotify code" class="spotify-cover-img"
+                    id="spotify-code-img">
+                </div>
+                <div class="card-footer-glow">
+                  <div class="glow-tag"><span class="live-dot"></span><span>Direct Camera Scannable</span></div>
+                  <button class="expand-code-btn" id="expand-code-btn" title="View fullscreen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                    <span>Full Card</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="spotify-actions-bar">
+              <!-- TODO: replace with your real playlist link, e.g. https://open.spotify.com/playlist/... -->
+              <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer"
+                class="silk-action-btn primary small" id="open-spotify-btn">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <use href="#sp-icon" />
+                </svg>
+                <span>Open in Spotify</span>
+              </a>
+              <button id="how-to-scan-btn" class="pill-btn ghost small">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+                <span>How to Scan</span>
+              </button>
+              <a href="spotify-playlist-code.jpg" download="Dr-Gigi-Spotify-Playlist-Card.jpg"
+                class="pill-btn icon-only small" id="download-card-link" title="Download card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="spotify-player-stage">
+            <div class="player-glass-card">
+              <div class="player-top-row">
+                <div class="mixtape-label-group">
+                  <span class="mixtape-super">OCTOBER 23RD EDITION</span>
+                  <h3 class="mixtape-title" id="display-mixtape-title">Soundtrack Just For You</h3>
+                </div>
+                <div class="live-visualizer" id="equalizer-bars" title="Audio Visualizer">
+                  <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span
+                    class="eq-bar"></span><span class="eq-bar"></span>
+                </div>
+              </div>
+
+              <div class="now-playing-box">
+                <div class="track-avatar-wrap">
+                  <img src="her-portrait-square.jpg" alt="" class="track-avatar-img" id="current-track-art">
+                  <div class="avatar-disc-halo"></div>
+                </div>
+                <div class="track-details">
+                  <div class="track-tag-pill">NOW PLAYING</div>
+                  <h4 class="track-name" id="current-track-name">Golden Hour</h4>
+                  <p class="track-artist" id="current-track-artist">JVKE</p>
+                  <p class="track-dedication" id="current-track-dedication">“For the golden glow you bring to every
+                    room.”</p>
+                </div>
+              </div>
+
+              <div class="audio-scrubber-wrapper">
+                <div class="scrubber-bar" id="scrubber-bar">
+                  <div class="scrubber-progress" id="scrubber-progress"></div>
+                  <div class="scrubber-thumb" id="scrubber-thumb"></div>
+                </div>
+                <div class="scrubber-times"><span id="time-current">0:00</span><span id="time-total">3:29</span></div>
+              </div>
+
+              <div class="player-controls">
+                <button class="ctrl-btn icon-subtle" id="player-shuffle-btn" title="Shuffle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                    <polyline points="21 16 21 21 16 21"></polyline>
+                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                    <line x1="4" y1="4" x2="9" y2="9"></line>
+                  </svg>
+                </button>
+                <button class="ctrl-btn" id="player-prev-btn" title="Previous">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                    <line x1="5" y1="19" x2="5" y2="5"></line>
+                  </svg>
+                </button>
+                <button class="main-play-btn" id="player-play-btn" title="Play / Pause">
+                  <svg class="play-icon" id="player-play-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <svg class="pause-icon hidden" id="player-pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                </button>
+                <button class="ctrl-btn" id="player-next-btn" title="Next">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                  </svg>
+                </button>
+                <button class="ctrl-btn icon-subtle" id="player-repeat-btn" title="Repeat">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="17 1 21 5 17 9"></polyline>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <polyline points="7 23 3 19 7 15"></polyline>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="playlist-tracks-container">
+                <div class="tracks-header"><span>CURATED TRACKLIST</span><span id="tracks-count">6 TRACKS</span></div>
+                <div class="tracks-list" id="playlist-tracks-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Video -->
+    <section class="video-section" id="video-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">04</span>
+          <h2 class="section-heading">Video Moments</h2>
+          <p class="section-subtext">A few moments, just for your birthday.</p>
+        </div>
+
+        <div class="cinema-showcase">
+          <div class="cinema-screen-wrap">
+            <div class="cinema-ambient-glow" id="video-ambient-glow"></div>
+            <div class="cinema-monitor">
+              <video id="featured-video-player" playsinline preload="metadata" controls class="cinema-video">
+                <source src="images/MicrosoftTeams-video.mp4" type="video/mp4" id="video-source">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-now-playing-banner">
+              <div class="video-banner-left">
+                <span class="video-badge">NOW PLAYING</span>
+                <h3 class="video-banner-title" id="current-video-title">A Moment in Motion</h3>
+                <p class="video-banner-sub" id="current-video-sub">“Every glance, every smile — living proof of your
+                  effortless grace.”</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-playlist-grid">
+            <div class="video-card-item active" data-video-src="images/MicrosoftTeams-video.mp4"
+              data-title="A Moment in Motion"
+              data-sub="“Every glance, every smile — living proof of your effortless grace.”">
+              <div class="video-card-thumb">
+                <div class="video-play-overlay"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                  </svg></div><span class="video-badge-pill">VIDEO 01</span>
+              </div>
+              <div class="video-card-info">
+                <h4 class="v-card-title">A Moment in Motion</h4>
+                <p class="v-card-sub">Pure beauty captured in natural light</p>
+              </div>
+            </div>
+            <div class="video-card-item" data-video-src="images/MicrosoftTeams-video (1).mp4"
+              data-title="Her Golden Laughter" data-sub="“The sound of your happiness is a lovely thing to hear.”">
+              <div class="video-card-thumb">
+                <div class="video-play-overlay"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                  </svg></div><span class="video-badge-pill">VIDEO 02</span>
+              </div>
+              <div class="video-card-info">
+                <h4 class="v-card-title">Her Golden Laughter</h4>
+                <p class="v-card-sub">Joy, warmth, and genuine smiles</p>
+              </div>
+            </div>
+            <div class="video-card-item" data-video-src="images/MicrosoftTeams-video (2).mp4"
+              data-title="Cherished Moments" data-sub="“Celebrating you today and always.”">
+              <div class="video-card-thumb">
+                <div class="video-play-overlay"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                  </svg></div><span class="video-badge-pill">VIDEO 03</span>
+              </div>
+              <div class="video-card-info">
+                <h4 class="v-card-title">Cherished Moments</h4>
+                <p class="v-card-sub">A little something for your birthday</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Letter -->
+    <section class="letter-section" id="letter-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">05</span>
+          <h2 class="section-heading">Words From the Heart</h2>
+          <p class="section-subtext">A keepsake sealed in pearl wax, written for October 23rd.</p>
+        </div>
+
+        <div class="envelope-showcase">
+          <div class="sealed-envelope" id="sealed-envelope">
+            <div class="envelope-body">
+              <div class="envelope-top-fold" id="envelope-fold"></div>
+              <div class="envelope-seal" id="envelope-wax-seal" title="Click to break the seal &amp; open the letter">
+                <div class="seal-inner"><span>23</span></div>
+              </div>
+              <div class="envelope-front-pocket"><span class="to-label">FOR DR. GIGI, ON HER SPECIAL DAY</span></div>
+            </div>
+          </div>
+
+          <div class="unfolded-letter hidden" id="unfolded-letter">
+            <div class="letter-parchment">
+              <div class="parchment-border">
+                <div class="letter-header">
+                  <span class="letter-date">OCTOBER 23, 2026</span>
+                  <span class="letter-salutation">Dear <span class="highlight-name" id="letter-name">Dr.
+                      Gigi</span>,</span>
+                </div>
+
+                <div class="letter-content" id="letter-body-text">
+                  <p>Happy birthday, Dr. Gigi.</p>
+                  <p>A few months ago we were practically strangers, connected by something as abstract as Nigeria. I am
+                    genuinely glad our paths crossed, and happy about every little thing I have learned about you since.
+                  </p>
+                  <p>You are impossible to overlook: the way your mind works, how much you know, and the calm you bring.
+                    Today, celebrate yourself, not just for another year, but for the person you are becoming and
+                    everything ahead of you. Stanford Med is in your future, and we will say it with faith.</p>
+                  <p>Since white is your favourite colour, my prayer is that this new year brings you what it stands
+                    for: peace, clarity, and new beginnings. May God give you peace when life gets difficult, clarity
+                    when things are uncertain, and courage to pursue everything you hope for.</p>
+                  <p>Have a beautiful day. You deserve every good thing.</p>
+                </div>
+
+                <div class="letter-signature">
+                  <p class="closing">With warm wishes,</p>
+                  <p class="sender-signature" id="letter-sender-name">Praise</p>
+                </div>
+
+                <div class="letter-actions">
+                  <button id="close-letter-btn" class="pill-btn ghost small">Seal Envelope Again</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Reasons -->
+    <section class="reasons-section" id="reasons-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">06</span>
+          <h2 class="section-heading">23 Things I Admire About You</h2>
+          <p class="section-subtext">Click the glass jar to draw a new reason.</p>
+        </div>
+
+        <div class="jar-display-card">
+          <div class="jar-graphic" id="interactive-jar">
+            <div class="jar-lid"></div>
+            <div class="jar-rim"></div>
+            <div class="jar-glass">
+              <div class="jar-scroll s1"></div>
+              <div class="jar-scroll s2"></div>
+              <div class="jar-scroll s3"></div>
+              <div class="jar-scroll s4"></div>
+              <div class="jar-scroll s5"></div>
+              <div class="jar-glow"></div>
+            </div>
+          </div>
+
+          <div class="jar-pull-panel">
+            <div class="drawn-note-card" id="drawn-note">
+              <span class="drawn-counter" id="drawn-counter">REASON Nº 1 OF 23</span>
+              <p class="drawn-text" id="drawn-text">“The calm that follows you into every room.”</p>
+            </div>
+            <button id="draw-next-btn" class="silk-action-btn primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              <span>Pull Another Reason</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Lanterns -->
+    <section class="wishmaker-section" id="wishmaker-section">
+      <div class="editorial-container">
+        <div class="section-meta">
+          <span class="section-number">07</span>
+          <h2 class="section-heading">Send a Lantern to the Sky</h2>
+          <p class="section-subtext">Write a hope, dream, or birthday wish, then release your glowing lantern into the
+            night.</p>
+        </div>
+
+        <div class="lantern-box">
+          <div class="lantern-input-row">
+            <input type="text" id="wish-input" class="silk-input" placeholder="Enter your birthday wish or dream..."
+              maxlength="100">
+            <button id="release-lantern-btn" class="silk-action-btn primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Release Lantern</span>
+            </button>
+          </div>
+          <div class="lanterns-sky" id="lanterns-sky">
+            <div class="sky-hint" id="sky-hint">Released lanterns will drift upward into the night...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="editorial-footer">
+      <div class="editorial-container footer-flex">
+        <div class="footer-left">
+          <span class="footer-brand">OCTOBER 23 • MONOCHROME SILK EDITION</span>
+          <p class="footer-note">Made with care for your special day.</p>
+        </div>
+        <div class="footer-right"><button id="scroll-to-top-btn" class="pill-btn ghost small">Back to Top ↑</button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scan guide -->
+  <div class="modal-overlay hidden" id="scan-guide-modal">
+    <div class="modal-card scan-guide-card">
+      <div class="modal-header">
+        <div class="guide-header-title">
+          <svg class="spotify-badge-icon" viewBox="0 0 24 24" fill="#1DB954">
+            <use href="#sp-icon" />
+          </svg>
+          <h3 class="modal-title">How to Scan on Spotify</h3>
+        </div>
+        <button id="close-scan-modal-btn" class="close-x">&times;</button>
+      </div>
+      <div class="modal-body scan-guide-body">
+        <p class="scan-intro">Your phone's Spotify app has a built-in camera scanner:</p>
+        <div class="scan-steps-list">
+          <div class="scan-step-item"><span class="step-num">1</span>
+            <div class="step-content"><strong>Open the Spotify App</strong>
+              <p>Launch Spotify on your iOS or Android device.</p>
+            </div>
+          </div>
+          <div class="scan-step-item"><span class="step-num">2</span>
+            <div class="step-content"><strong>Go to Search</strong>
+              <p>Tap the Search (magnifying glass) tab at the bottom.</p>
+            </div>
+          </div>
+          <div class="scan-step-item"><span class="step-num">3</span>
+            <div class="step-content"><strong>Tap the Camera Icon</strong>
+              <p>In the search field, tap the small camera icon on the far right.</p>
+            </div>
+          </div>
+          <div class="scan-step-item"><span class="step-num">4</span>
+            <div class="step-content"><strong>Point at the Sound Wave Code</strong>
+              <p>Aim your camera at the sound code below the photo. It opens your playlist instantly!</p>
+            </div>
+          </div>
+        </div>
+        <div class="scan-modal-code-preview"><img src="spotify-playlist-code.jpg" alt="Spotify code preview"
+            class="mini-card-preview"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="guide-close-btn" class="pill-btn ghost small">Got It</button>
+        <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer"
+          class="silk-action-btn primary small" id="guide-open-app-btn">Open Spotify App</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen code -->
+  <div class="modal-overlay hidden" id="lightbox-modal">
+    <div class="lightbox-wrapper">
+      <button id="close-lightbox-btn" class="lightbox-close">&times;</button>
+      <div class="lightbox-card-container">
+        <img src="spotify-playlist-code.jpg" alt="Spotify code fullscreen" class="lightbox-img">
+        <div class="lightbox-caption"><span>Point your Spotify app camera directly at this code</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

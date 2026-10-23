@@ -1,0 +1,30 @@
+/* Photos: show exactly as uploaded, no filters, tints or overlays */
+img,
+.polaroid-img,
+.spotify-cover-img,
+.lightbox-img,
+.track-avatar-img,
+.vinyl-label-img {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+}
+
+.polaroid-photo-frame::before,
+.polaroid-photo-frame::after,
+.card-image-holder::before,
+.card-image-holder::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Owner-only tools hidden from the birthday girl's view.
+   Delete a line to bring that tool back. */
+#open-customize-btn,
+#edit-letter-btn,
+#toggle-mode-btn,
+#add-memory-btn,
+.replace-photo-btn,
+.photo-tip-bar {
+    display: none !important;
+}
